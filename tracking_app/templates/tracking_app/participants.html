@@ -1,0 +1,316 @@
+{% extends "tracking_app/base.html"%}
+{% block content %}
+{%load static%}
+<style>
+    .td {
+        font-weight: bold;
+    }
+</style>
+<br>
+<div class='container'>
+    <div class="col"></div>
+    <div class="col">
+        <div class=" text-center">
+            <img src="{%static 'visual/gfest.png'%}" alt="" height="75" width="75">
+            <h3 style="font-weight: bold;"> Registered participants </h3>
+            <br>
+            <div class="row">
+                <table class="table table-dark rounded" style="border-radius: 30px;">
+                    <thead>
+                        <th> ID </th> <th> Participant </th> <th> Phone </th> <th> Scans </th> <th>Status</th> <th>Action</th>
+                    </thead>
+                {% for participant in participants %}
+                    <tr>
+                        <td>{{ participant.id }}</td>
+                        <td>{{ participant.name }}</td>
+                        <td>{{ participant.phone_nr }}</td>
+                        <td> {{ participant.scans }} </td>
+                        <td> <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#incomplete">
+                            Click!
+                            </button> </td>
+                            <div class="modal fade" id="incomplete" tabindex="-1" role="dialog" aria-labelledby="incompleteLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content bg-dark">
+                                    <div class="modal-header">
+                                      <h5 style="color:white ; font-weight:bold " class="modal-title" id="exampleModalLabel">Tasks status:</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div style="color:white" class="modal-body">
+                                        <p>Stand 1 : <span 
+                                            {% if participant.stand1 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand1}}
+                                        </span> </p>
+                                        <p>Stand 2 : <span 
+                                            {% if participant.stand2 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand2}}
+                                        </span> </p>
+                                        <p>Stand 3 : <span 
+                                            {% if participant.stand3 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand3}}
+                                        </span> </p>
+                                        <p>Stand 4 : <span 
+                                            {% if participant.stand4 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand4}}
+                                        </span> </p>
+                                        <p>Stand 5 : <span 
+                                            {% if participant.stand5 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand5}}
+                                        </span> </p>
+                                        <p>Stand 6 : <span 
+                                            {% if participant.stand6 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand6}}
+                                        </span> </p>
+                                        <p>Stand 7 : <span 
+                                            {% if participant.stand7 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand7}}
+                                        </span> </p>
+                                        <p>Stand 8 : <span 
+                                            {% if participant.stand8 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand8}}
+                                        </span> </p>
+                                        <p>Stand 9 : <span 
+                                            {% if participant.stand9 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand9}}
+                                        </span> </p>
+                                        <p>Stand 10 : <span 
+                                            {% if participant.stand10 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand10}}
+                                        </span> </p>
+                                        <p>Stand 11 : <span 
+                                            {% if participant.stand11 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand11}}
+                                        </span> </p>
+                                        <p>Stand 12 : <span 
+                                            {% if participant.stand12 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand12}}
+                                        </span> </p>
+                                        <p>Stand 13 : <span 
+                                            {% if participant.stand13 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand13}}
+                                        </span> </p>
+                                        <p>Stand 14 : <span 
+                                            {% if participant.stand14 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand14}}
+                                        </span> </p>
+                                        <p>Stand 15 : <span 
+                                            {% if participant.stand15 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand15}}
+                                        </span> </p>
+                                        <p>Stand 16 : <span 
+                                            {% if participant.stand16 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand16}}
+                                        </span> </p>
+                                        <p>Stand 17 : <span 
+                                            {% if participant.stand17 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand17}}
+                                        </span> </p>
+                                        <p>Stand 18 : <span 
+                                            {% if participant.stand18 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand18}}
+                                        </span> </p>
+                                        <p>Stand 19 : <span 
+                                            {% if participant.stand19 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand19}}
+                                        </span> </p>
+                                        <p>Stand 20 : <span 
+                                            {% if participant.stand20 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand20}}
+                                        </span> </p>
+                                        <p>Stand 21 : <span 
+                                            {% if participant.stand21 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand21}}
+                                        </span> </p>
+                                        <p>Stand 22 : <span 
+                                            {% if participant.stand22 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand22}}
+                                        </span> </p>
+                                        <p>Stand 23 : <span 
+                                            {% if participant.stand23 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand23}}
+                                        </span> </p>
+                                        <p>Stand 24 : <span 
+                                            {% if participant.stand24 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand24}}
+                                        </span> </p>
+                                        <p>Stand 25 : <span 
+                                            {% if participant.stand25 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand25}}
+                                        </span> </p>
+                                        <p>Stand 26 : <span 
+                                            {% if participant.stand26 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand26}}
+                                        </span> </p>
+                                        <p>Stand 27 : <span 
+                                            {% if participant.stand27 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand27}}
+                                        </span> </p>
+                                        <p>Stand 28 : <span 
+                                            {% if participant.stand28 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand28}}
+                                        </span> </p>
+                                        <p>Stand 29 : <span 
+                                            {% if participant.stand29 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand29}}
+                                        </span> </p>
+                                        <p>Stand 30 : <span 
+                                            {% if participant.stand30 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand30}}
+                                        </span> </p>
+                                        <p>Stand 31 : <span 
+                                            {% if participant.stand31 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand31}}
+                                        </span> </p>
+                                        <p>Stand 32 : <span 
+                                            {% if participant.stand32 == True%}
+                                            style="color:#97e601; font-weight:bold"
+                                            {%else%}
+                                            style="color:red; font-weight:bold"
+                                            {%endif%}
+                                            >{{participant.stand32}}
+                                        </span> </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-outline-info" data-dismiss="modal">Okay</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        <td> <a style="color: #97e601; font-weight:bold ;" href="{% url 'delete' participant.id %}"> Delete </a> </td>
+                    </tr>
+                {% endfor %}
+                </table>
+            </div>
+            
+        </div>
+    </div>
+    <div class="col"></div>
+    
+</div>
+
+{% endblock content%}
