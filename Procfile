@@ -1,1 +1,1 @@
-web: gunicorn g-fest.wsgi:application --log-file -
+web: gunicorn rock_n_iasi_tracking.wsgi:application --log-file -
