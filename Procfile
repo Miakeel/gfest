@@ -1,1 +1,1 @@
-web: gunicorn myproject.wsgi
+web: gunicorn g-fest.wsgi:application --log-file -
