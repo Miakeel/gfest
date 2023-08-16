@@ -51,7 +51,7 @@ class Command(BaseCommand):
                     qr_img = qr.make_image()
                     qr_img = qr_img.resize((qr_width, qr_height))
                     qr_img = ImageOps.expand(qr_img, border=qr_border)
-                    myFont=ImageFont.truetype("/usr/share/fonts/truetype/freefont/FreeMono.ttf", 40)
+                    myFont=ImageFont.truetype("tracking_app/management/commands/FreeMono.ttf", 40)
                     code.text((75,160), str(qrcodeid.id), font=myFont)
                     temporary.paste(qr_img, (665, 210))
                     
